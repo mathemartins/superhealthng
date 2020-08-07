@@ -1,0 +1,1 @@
+web: gunicorn superhealthng.wsgi --log-file -

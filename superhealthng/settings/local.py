@@ -25,8 +25,15 @@ SECRET_KEY = '=i%zsbt5_ccrl$54m%m)1x)txyci-v(9g98nigk6_!f)lyg6(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+BASE_URL = '127.0.0.1:8000'
+
+MANAGERS = (
+    ('Superstars Promotions', "superstarspromotions@gmail.com"),
+)
+
+ADMINS = MANAGERS
 
 # Application definition
 
@@ -37,9 +44,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_summernote',
+    'corsheaders',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,7 +65,7 @@ ROOT_URLCONF = 'superhealthng.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media_root")
+PROTECTED_ROOT = os.path.join(BASE_DIR, "static", "protected_media")
+CORS_ORIGIN_ALLOW_ALL = True
+
+from superhealthng.c_config import *
