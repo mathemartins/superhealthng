@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include # url
+from blog.views import (
+    blog_post_create_view,
+)
+
+from .views import (
+    home_page,
+)
+
 
 urlpatterns = [
+    path('', home_page),
+    path('blog-new/', blog_post_create_view),
+    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
 ]

@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'django_summernote',
     'corsheaders',
     'crispy_forms',
+    'widget_tweaks',
+
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'superhealthng.urls'
+CRISPY_TEMPLATE_PACK = 'uni_form'
+SUMMERNOTE_THEME = 'bs4'  # Show summernote with Bootstrap4
 
 TEMPLATES = [
     {
