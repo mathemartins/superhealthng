@@ -145,10 +145,9 @@ import cloudinary.uploader
 import cloudinary.api
 
 cloudinary.config(
-    cloud_name="",
-    api_key="",
-    api_secret=""
+    cloud_name="hz223rhs8",
+    api_key="154522964352889",
+    api_secret="8y2VLwGNtScMsOSomybP4J6XQ2E"
 )
 
-cloudinary_url = "https://api.cloudinary.com/v1_1/hbnufshgh/upload"
-cloudinary_upload_preset = "bov6ikyb"
+cloudinary_url = "https://api.cloudinary.com/v1_1/hz223rhs8/upload"
